@@ -1,0 +1,685 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="nodejs," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="n 是 Node.js 的版本管理器，由 Express 框架的作者tj编写的。虽然目前在 github 上只有 4000+ 的 stars ，与其类似的 nvm 相差深远。但我还是比较喜欢 n ，要问我为什么，请听下文分解^^
+安装n 有3种安装方式
+
+npm install -g n
+如果已经安装来 node 可以用这种安装方式。   
+
+make install
+ 编译安装。 先用git c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="n">
+<meta property="og:url" content="http://www.blue0125.me/2016/08/03/n/index.html">
+<meta property="og:site_name" content="blue0125.me">
+<meta property="og:description" content="n 是 Node.js 的版本管理器，由 Express 框架的作者tj编写的。虽然目前在 github 上只有 4000+ 的 stars ，与其类似的 nvm 相差深远。但我还是比较喜欢 n ，要问我为什么，请听下文分解^^
+安装n 有3种安装方式
+
+npm install -g n
+如果已经安装来 node 可以用这种安装方式。   
+
+make install
+ 编译安装。 先用git c">
+<meta property="og:image" content="http://www.blue0125.me/asset/images/n/make-install.png">
+<meta property="og:image" content="http://www.blue0125.me/asset/images/n/n-tree.png">
+<meta property="og:updated_time" content="2016-08-11T13:16:57.609Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="n">
+<meta name="twitter:description" content="n 是 Node.js 的版本管理器，由 Express 框架的作者tj编写的。虽然目前在 github 上只有 4000+ 的 stars ，与其类似的 nvm 相差深远。但我还是比较喜欢 n ，要问我为什么，请听下文分解^^
+安装n 有3种安装方式
+
+npm install -g n
+如果已经安装来 node 可以用这种安装方式。   
+
+make install
+ 编译安装。 先用git c">
+<meta name="twitter:image" content="http://www.blue0125.me/asset/images/n/make-install.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.blue0125.me/2016/08/03/n/"/>
+
+  <title> n | blue0125.me </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-24789463-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">blue0125.me</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">贪蓝无厌</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                n
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-03T22:49:25+08:00" content="2016-08-03">
+              2016-08-03
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/03/n/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/03/n/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://github.com/tj/n" target="_blank" rel="external">n</a> 是 <a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a> 的版本管理器，由 <a href="https://expressjs.com/" target="_blank" rel="external">Express</a> 框架的作者tj编写的。虽然目前在 github 上只有 4000+ 的 stars ，与其类似的 <a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a> 相差深远。但我还是比较喜欢 n ，要问我为什么，请听下文分解^^</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>n 有3种安装方式</p>
+<ol>
+<li><p><code>npm install -g n</code></p>
+<p>如果已经安装来 node 可以用这种安装方式。   </p>
+</li>
+<li><p><code>make install</code></p>
+<p> 编译安装。<br> 先用git clone 项目。 这里我将不使用默认的安装目录 <code>/usr/local</code>。主要是后面使用 node 和 npm 时要加上 sudo 相当不方便，还有一些其他问题。</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/tj/n.git ~/.node/n.git</div></pre></td></tr></table></figure>
+<p> 安装 n</p>
+<p> 在 <code>make install</code> 前添加 PREFIX 用于定义安装目录。  </p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/.node/n.git/</div><div class="line">PREFIX=<span class="variable">$HOME</span>/.node make install</div></pre></td></tr></table></figure>
+<p> 运行结果如下：</p>
+<p> <img src="/asset/images/n/make-install.png" alt="make install"></p>
+<p> 上图中可以看出命令只是在目标目录创建来 bin 目录，然后把 git clone 下来的 n bash 文件复制到 bin 目录。接下来我们要把这个 bin 添加到系统变量中，这样我们可以在任何地方直接运行 n 命令了。</p>
+<p> 这里我们修改用户 home 目录下的 .profile 。当然也可以修改 .bashrc 文件或者 /etc/profile 等其他地方。这个是 linux 的系统变量的一些知识。<br> 然后顺带把 N_PREFIX 变量设置成 $HOME/.node/n 。</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vi ~/.profile</div><div class="line"><span class="variable">$PATH</span>=<span class="string">"<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/.node/bin"</span></div><div class="line"><span class="built_in">export</span> N_PREFIX=<span class="string">"<span class="variable">$HOME</span>/.node/n"</span></div></pre></td></tr></table></figure>
+<p> 保存文件退出，运行下面代码使上面修改的文件立即生效。</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> ~/.profile</div></pre></td></tr></table></figure>
+<p> 到这里 n 已经可以方便使用了。接下来查看版本检验是否如我们希望的已经完成。</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">n -V</div></pre></td></tr></table></figure>
+<p> 我这里看到了终端输出了 2.1.3，这个是现在我使用的版本，验证完毕。</p>
+</li>
+<li><p>`curl -L <a href="http://git.io/n-install" target="_blank" rel="external">http://git.io/n-install</a> | bash</p>
+<p>这种方法是使用了第三方安装程序 <a href="https://github.com/mklement0/n-install" target="_blank" rel="external">n-install</a> 具体如何按照个人喜好配置，具体参考 n 的 README.me 。</p>
+</li>
+</ol>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p><code>n -h</code> 查看具体用法。</p>
+<p>这里简单介绍一下常用的用法：<br><code>n &lt;version&gt;</code> 就可以安装对应版本号的 nodejs 了。如果已经该版本已经安装那就切换这个版本为当前 nodejs 版本。<br>直接运行 <code>n</code> 会列出已经安装的版本，用上下键选取需要的版本。<br><code>n latest</code> <code>n stable</code> <code>n lts</code> 分别安装 最后一个发布版本、最后一个稳定版本以最后一个长支持版本。<br><code>n rm &lt;version&gt;</code> 删除一个版本<br><code>n io &lt;version&gt;</code> 安装 io.js 的版本。</p>
+<p>安装完 nodejs 或用 n 切换过版本后，不要忘记运行 <code>node -v</code> 验证。</p>
+<p>## </p>
+<p>看下 <code>~/.node</code> 目录结构<br><img src="/asset/images/n/n-tree.png" alt="n-tree"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nodejs/" rel="tag">#nodejs</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/25/hello-jekyll/" rel="next" title="hello jekyll">
+                <i class="fa fa-chevron-left"></i> hello jekyll
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/17/understanding-node/" rel="prev" title="Understanding node">
+                Understanding node <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars0.githubusercontent.com/u/496225?v=3&s=460"
+               alt="blue0125" />
+          <p class="site-author-name" itemprop="name">blue0125</p>
+          <p class="site-description motion-element" itemprop="description">blue0125</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/blue01225" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/blue0125" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">2.</span> <span class="nav-text">用法</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">blue0125</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'blue0125';
+      var disqus_identifier = '2016/08/03/n/';
+      var disqus_title = "n";
+      var disqus_url = 'http://www.blue0125.me/2016/08/03/n/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

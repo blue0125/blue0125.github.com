@@ -1,0 +1,690 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="分享，其实大多数是只是Octopress文档的翻译而已。网上也有狠多类是的文章。我也是参考了一些文章后搭建起来的。就想整理下，自己写出来，锻炼下表达能力。有错误的地方请指出哈。还有更多的用法技巧要到以后学习了再来总结 =3。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用octopress建立博客">
+<meta property="og:url" content="http://www.blue0125.me/2012/02/27/set-up-blog-by-octopress/index.html">
+<meta property="og:site_name" content="blue0125.me">
+<meta property="og:description" content="分享，其实大多数是只是Octopress文档的翻译而已。网上也有狠多类是的文章。我也是参考了一些文章后搭建起来的。就想整理下，自己写出来，锻炼下表达能力。有错误的地方请指出哈。还有更多的用法技巧要到以后学习了再来总结 =3。">
+<meta property="og:updated_time" content="2016-08-23T15:12:49.543Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用octopress建立博客">
+<meta name="twitter:description" content="分享，其实大多数是只是Octopress文档的翻译而已。网上也有狠多类是的文章。我也是参考了一些文章后搭建起来的。就想整理下，自己写出来，锻炼下表达能力。有错误的地方请指出哈。还有更多的用法技巧要到以后学习了再来总结 =3。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.blue0125.me/2012/02/27/set-up-blog-by-octopress/"/>
+
+  <title> 用octopress建立博客 | blue0125.me </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-24789463-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">blue0125.me</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">贪蓝无厌</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                用octopress建立博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2012-02-27T21:01:00+08:00" content="2012-02-27">
+              2012-02-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/octopress/" itemprop="url" rel="index">
+                    <span itemprop="name">octopress</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2012/02/27/set-up-blog-by-octopress/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/27/set-up-blog-by-octopress/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>分享，其实大多数是只是<a href="http://octopress.org/" title="Octopress" target="_blank" rel="external">Octopress</a>文档的翻译而已。<br>网上也有狠多类是的文章。我也是参考了一些文章后搭建起来的。<br>就想整理下，自己写出来，锻炼下表达能力。<br>有错误的地方请指出哈。<br>还有更多的用法技巧要到以后学习了再来总结 =3。  </p>
+<a id="more"></a>
+<p>##安装</p>
+<p>###git<br>先到<a href="https://github.com/" title="github" target="_blank" rel="external">github</a>注册一个帐号。github的这只猫还是比较可爱的。<br>注册完帐号后要建立一个<code>用户名.github.com</code>的仓库。<br>git是一个分布式版本控制系统。是linus(linux核心创作人)发起的另外一个开源项目。  </p>
+<p>sudo apt-get install git</p>
+<p>###ruby<br>我是用rbenv来安装ruby的。RVM和rbenv的区别说是RVM全面点，rbenv适合我这种外行就搭建个环境用。2个只要安装一个就行。  </p>
+<p>把rbenv克隆到本地。</p>
+<pre><code>$ git clone git://github.com/sstephenson/rbenv.git .rbenv
+</code></pre><p>然后把bin目录加到$PATH。<br>这样你就可以运行rbenv来安装ruby了。<br>因为octopress文档上写着需要ruby1.9.2，而且我在一开始用了1.9.3也出点问题(也不知道是不是版本的问题，后来用1.9.2就没错误)。所以这里推荐使用1.9.2。<br>安装办法有2种。一种是下载源码包后安装、另一种是直接用命令安装。<br>第一种、安装要放到rbenv的versions目录下。</p>
+<pre><code>$ ./configure --prefix=$HOME/.rbenv/versions/1.9.2-p290
+$ make
+$ make install
+</code></pre><p>第二种、</p>
+<pre><code>$rbenv install 1.9.2-p290
+</code></pre><p>安装完后</p>
+<pre><code>$ rbenv rehash
+</code></pre><p>###octopress    </p>
+<pre><code>$ git clone git clone git://github.com/imathis/octopress.git octopress
+$ cd octopress
+</code></pre><p>然后安装依赖的。</p>
+<pre><code>$ gem install bundler
+</code></pre><p>这里一些原因(国内的)会导致安装的死慢，可用淘宝的<a href="http://ruby.taobao.org/" title="Rubygems 镜像 - 淘宝网" target="_blank" rel="external">Rubygems</a>镜像。 </p>
+<pre><code>$ gem sources --remove http://rubygems.org/
+$ gem sources -a http://ruby.taobao.org/
+$ gem sources -l
+*** CURRENT SOURCES ***
+
+http://ruby.taobao.org
+# 请确保只有 ruby.taobao.org
+$ gem install foo
+</code></pre><p>重新安装bundler后</p>
+<pre><code>$ bundle install
+</code></pre><p>然后安装octopress的默认主题</p>
+<pre><code>$ rake install
+</code></pre><p>这里会在octopress根目录下生成source和sass目录。<br>这样基本就安装好了。</p>
+<p>##发布<br>接下来就编写第一篇博客了。  </p>
+<pre><code>rake new_post[&quot;post title&quot;]
+</code></pre><p>这里会在source目录下的_post目录下生成一个markdown文件。这个就是要编辑的blog文章了。<br>接下来就是生成静态站点  </p>
+<pre><code>rake generate
+</code></pre><p>这里会读取octopress根目录下的_config.yml的配置文件，并按照source的内容生成public文件的静态站点。  </p>
+<pre><code>rake preview
+</code></pre><p>启动本地服务localhost:4000就能看到预览效果了。  </p>
+<p>先按照github处理好一开始新建的github项目，接着</p>
+<pre><code>rake setup_github_pages
+</code></pre><p>按提示输入你的github项目地址，exp:<br><code>git@github.com:blue0125/blue0125.github.com.git</code><br>这样以后只要输入下面命令就可以发布blog到github上了。</p>
+<pre><code>rake deploy
+</code></pre><p>在source下<code>echo &#39;blue0125.me&#39; &gt; CNAME</code>，用于定制自己的域名，然后把域名的A记录指向<code>207.97.227.245</code>。详见<a href="http://pages.github.com/" title="pages.github.com" target="_blank" rel="external">pages.github.com</a><br>别忘记再建立一个source项目来备份本地的源文件。</p>
+<p>###由于多次尝试，具体顺序有混乱了。就错误请纠正哈。。。  </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2012/02/16/markdown-syntax/" rel="next" title="Markdown-Syntax">
+                <i class="fa fa-chevron-left"></i> Markdown-Syntax
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/25/hello-jekyll/" rel="prev" title="hello jekyll">
+                hello jekyll <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars0.githubusercontent.com/u/496225?v=3&s=460"
+               alt="blue0125" />
+          <p class="site-author-name" itemprop="name">blue0125</p>
+          <p class="site-description motion-element" itemprop="description">blue0125</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/blue01225" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/blue0125" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">blue0125</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'blue0125';
+      var disqus_identifier = '2012/02/27/set-up-blog-by-octopress/';
+      var disqus_title = "用octopress建立博客";
+      var disqus_url = 'http://www.blue0125.me/2012/02/27/set-up-blog-by-octopress/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
